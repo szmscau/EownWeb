@@ -1,0 +1,250 @@
+.container{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        .timer{
+            width: 250px;
+            position: fixed;
+            left: -52px;
+            bottom:120px;
+            text-align: center;
+        /* Rotate */
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        /* Rotate Origin */
+            -webkit-transform-origin: 0 100%;
+            -moz-transform-origin: 0 100%;
+            -ms-transform-origin: 0 100%;
+            -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+            .timer-month{
+                margin-left: -47px;
+                color: white;
+                font-size: 1.6em;
+                // font-weight: bolder;
+            }
+            .timer-day{
+                display: inline-block;
+                color: white;
+                font-size: 0.8em;
+            }
+            .timer-time{
+                margin-left: 47px;
+                display: inline-block;
+                color: white;
+                font-size: 0.6em;
+            }
+        }
+        .content{
+            width: 45%;
+            height: 120px;
+            // background: lightgrey;
+            margin: 330px auto;
+            ul{
+                width: 100%;
+                height: 120px;
+                padding: 0;
+                margin: 0 auto;
+                float: left;
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                flex-wrap:wrap;
+                display: -webkit-flex; /* Safari */
+                justify-content: space-around;
+                li{
+                    width: 120px;
+                    height: 100%;
+                    a{
+                        cursor: pointer;
+                        opacity: 1;
+                        display: block;
+                        width: 66%;
+                        height: 83px;
+                        border-radius: 100%;
+                        margin: 5% auto;
+                        border: 1px white solid;
+                        text-align: center;
+                        line-height: 83px;
+                        transition: transform  0.15s, opacity 0.15s;
+                        -webkit-transition: transform 0.15s ,  opacity 0.15s; /* Safari */;
+                    }
+                    a:hover{
+                        opacity: 0.5;
+                        background-color:white;
+                        -ms-transform: scale(1.08,1.08); /* IE 9 */
+                        -webkit-transform: scale(1.08,1.08); /* Safari */
+                        transform: scale(1.08,1.08); /* 标准语法 */
+                    }
+                    #wechat{
+                        background: url(../../asset/img/wechat.png) no-repeat center;
+                        background-size: 60% 60%;
+                    }
+                    #email{
+                        background: url(../../asset/img/email.png) no-repeat center;
+                        background-size: 60% 60%;
+                    }
+                    #foot{
+                        background: url(../../asset/img/foot.png) no-repeat center;
+                        background-size: 60% 60%;
+                    }
+                    #introduce{
+                        background: url(../../asset/img/introduce.png) no-repeat center;
+                        background-size: 60% 60%;
+                    }
+                    #blog{
+                        background: url(../../asset/img/blog.png) no-repeat center;
+                        background-size: 60% 60%;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width:540px){
+            .content{
+                margin: 230px auto;
+                width: 100%;
+            }
+        }
+}
+.title{
+    width: 400px;
+    height: 300px;
+    position: fixed;
+    right: 0px;
+    top:-172px;
+    z-index: 100;
+/* Rotate */
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+/* Rotate Origin */
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -o-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    // margin: 60px 0 10px 310px;
+    // width: 70%;
+    // height: 500px;
+    h1{
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 4.35em;
+        margin-bottom: 10px;
+    }
+    @media screen and (max-width:1024px){
+        h1{
+             font-size: 2.45em;
+        }
+        h2{
+            font-size:1.25em;
+        }
+    }
+    h2{
+        width: 100%;
+        text-align: center;
+        color:  #E0EEE0;
+        font-size:1.35em;
+        font-weight: 100;
+    }
+}
+@media screen and (max-width:540px){
+    .title{
+        width:290px;
+        height: 170px;
+        right: -44px;
+        top :-131px;
+    }
+}
+.sunshine{
+        background: url('../../asset/img/midground_.png') repeat 0% 0%;
+        background-size: contain;
+        z-index: 100;
+        position: fixed;
+        width: 100%;
+        height: 300px;
+        top:0;
+        -webkit-animation: STAR-MOVE 400s linear infinite;
+        -moz-animation: STAR-MOVE 400s linear infinite;
+        -ms-animation: STAR-MOVE 400s linear infinite;
+        animation: STAR-MOVE 400s linear infinite;
+}
+@-webkit-keyframes STAR-MOVE {
+	from {
+		background-position:0% 0%
+	}
+	to {
+		background-position: 600% 0%
+	}
+}
+@keyframes STAR-MOVE {
+	from {
+		background-position: 0% 0%
+	}
+	to {
+		background-position: 600% 0%
+	}
+}
+@media screen and (max-width:540px){
+    .sunshine{
+        height: 260px;
+        top:-50px;
+        -webkit-animation: STAR-MOVE 40s linear infinite;
+        -moz-animation: STAR-MOVE 40s linear infinite;
+        -ms-animation: STAR-MOVE 40s linear infinite;
+        animation: STAR-MOVE 40s linear infinite;
+        background-size: cover;
+    }
+}
+.bg{
+    animation: bgmove 60s linear infinite;
+    -webkit-animation:bgmove 60s linear infinite; /*Safari and Chrome*/
+    backface-visibility: hidden;
+    transform: translate3d(0,0,0);
+    background: #348cb2  url(../../asset/img/bg1.jpg)  bottom left;
+    background-repeat: repeat-x;
+    height: 100%;
+    left: 0;
+    opacity: 1;
+    position: fixed;
+    top:0;
+    background-size: 1500px auto;
+    width: 8000px;
+}
+// @media screen and (max-width:480px){
+//     .bg{
+//         background-size: 412.5px auto;
+//         width: 1237.5px;
+//     }
+// }
+.over{
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    opacity: 0.2;
+    background: -webkit-linear-gradient(left top, #348cb2 ,white); /* Safari 5.1 - 6.0 */
+    background: -webkit-linear-gradient(left top, #348cb2 ,white); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(bottom right, #348cb2, white); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(bottom right, #348cb2, white); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to top right, #348cb2 , white); /* 标准的语法（必须放在最后*/
+
+}
+@keyframes bgmove
+{
+    from { 
+        transform: translate3d(0,0,0); 
+        -webkit-transform: translate3d(0,0,0);
+    }
+    to { 
+        transform: translate3d(-1500px,0,0);
+        -webkit-transform: translate3d(-1500px,0,0);
+    }
+}

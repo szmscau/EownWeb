@@ -1,0 +1,48 @@
+:global{
+    .modal-container{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 110;
+        background: black;
+        top: 0;
+        left: 0;
+        opacity: 0.7;
+        .modal-content{
+            width: 300px;
+            height: 300px;
+            margin: 15% auto;
+            background: url(../../asset/img/wechat_.jpg) no-repeat;
+            background-size: contain;
+        }
+
+    }
+    .show{
+        animation: showModal 0.5s ease-out  normal;
+        -webkit-animation: showModal 0.5s ease-out  normal; /* Safari 和 Chrome */
+    }
+    .hide{
+        animation: hideModal 0.5s ease-out  normal;
+        -webkit-animation: hideModal 0.5s ease-out  normal; /* Safari 和 Chrome */
+    }
+    @keyframes hideModal {
+        from { 
+            height : 300px;
+            width: 300px;
+        }
+        to { 
+            height: 300px;
+            width: 0px;
+        }
+    }
+        @keyframes showModal {
+        from { 
+            height: 300px;
+            width: 0px;
+        }
+        to { 
+            height : 300px;
+            width: 300px;
+        }
+    }
+}
