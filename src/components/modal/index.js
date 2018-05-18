@@ -41,7 +41,6 @@ class Modal extends React.Component {
         // const { show } = this.props
         const { show , modalClass, modalState } = this.state;
         let display = show ? "block" : "none";
-        console.log(2);
         return (
             <div className='modal-container' style={{ 'display': display }} onClick={this.hideModal.bind(this)} ref={(modal) => { this.modal = modal }}>
                 <div className={modalClass[modalState]} onClick={this.handleClick} ref={(modal) => { this.content = modal }}>

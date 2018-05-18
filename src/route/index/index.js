@@ -1,42 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom'
-import moment from "moment";
 import './style.less'
 import Modal from '../../components/modal'
+import Timer from '../../components/timer'
+
 class App extends React.Component {
   state = {
-    date: moment().date(),
-    month: moment().month(),
-    timer: moment().format('HH:mm'),
     temp:false,
-    monthUs: [
-      'Jan.',
-      'Feb.',
-      'Mar.',
-      'Apr.',
-      'May.',
-      'June.',
-      'July.',
-      'Aug.',
-      'Sept.',
-      'Oct.',
-      'Nov.',
-      'Dec.',
-    ]
-  }
-  componentDidMount() {
-    this.timeInter = setInterval(() => {
-      let _this = this;
-      let timer = moment().format('HH:mm');
-      _this.setState({
-        timer
-      });
-    }, 30000);
-  }
-  componentWillMount() {
-    //發現計時器便清除
-    this.timeInter && clearInterval(this.timeInter);
   }
   liClick(e){
     this.setState({
@@ -45,8 +16,7 @@ class App extends React.Component {
     // console.log(this.state.temp);
   } 
   render() {
-    const { date, month, timer, monthUs , temp} = this.state;
-    let monthU = monthUs[month];
+    const { temp} = this.state;
     return (
       <div>
         <div className='bg'></div>
@@ -56,15 +26,7 @@ class App extends React.Component {
             <h1>lighing</h1>
             <h2>一只想吃鱼的猪。^(*￣(oo)￣)^</h2>
           </div>
-          <div className="timer">
-            <div className="timer-month">{monthU}
-              <div className="timer-day">
-                {date} <sup>th</sup></div>
-            </div>
-            <div className="timer-time">
-              {timer}
-            </div>
-          </div>
+            <Timer />
           <div className="content">
             <ul>
               <li>
@@ -78,16 +40,19 @@ class App extends React.Component {
                 <Link to="/test" id="foot"></Link>
               </li>
               <li>
+                <a href="https://github.com/szmscau" id="github"></a>
+              </li>
+              <li>
                 <a href="mailto:shenzhiming999@126.com" id="email"></a>
               </li>
               <li onClick={this.liClick.bind(this)}>
                 <a id="wechat"></a>
-                <Modal show={temp}/>
               </li>
             </ul>
           </div>
           <div className="sunshine"/>      
         </div>
+        <Modal show={temp}/>
       </div>
     );
   }
