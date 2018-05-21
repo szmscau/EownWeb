@@ -69,7 +69,7 @@ const resume = {
             {
                 name: 'New retail',
                 type: "00",  // 00 为公司，11为项目
-                time: '2017-05~至今',
+                time: '2017-12~2018-04',
                 job: '前端开发工程师',
                 location: '浙江·杭州·西溪园区',
                 description: '阿里新零售，前端开发，基于dva（react、react-router-redux、react-router、redux-saga）脚手架、antv组件、viser图表库实现页面UI及业务逻辑'

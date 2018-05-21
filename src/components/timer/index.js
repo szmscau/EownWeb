@@ -28,7 +28,7 @@ class Timer extends React.Component {
           _this.setState({
             timer
           });
-        }, 30000);
+        }, 10000);
       }
       componentWillMount() {
         //發現計時器便清除
