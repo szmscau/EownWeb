@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import Header from '../../components/header'
 import BasicInfo from '../../components/basicInfo'
 import Companies from '../../components/companies'
+import Title from '../../components/title'
+import Footer from '../../components/footer'
 import './style.less'
 
 const resume = {
@@ -99,17 +101,16 @@ class Resume extends React.Component {
     render() { // Every react component has a render method.
         return (
             <div className="resume-container">
-                <div className='title'>
-                    <h1  >lighing</h1>
-                    <h2  >一只想吃鱼的猪。^(*￣(oo)￣)^</h2>
-                </div>
+                <Title />
                 <div className="resume-bg">
                     <div className='resume-content' >
                         <Header />
                         <BasicInfo basicInfo={resume.basicInfo} />
                         <Companies dataList={resume.companyExe} />
                     </div>
+                    <div className="br-block" />
                 </div>
+                <Footer index={false} text={'resume'}/>
             </div>
         );
     }

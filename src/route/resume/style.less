@@ -11,15 +11,29 @@
         .resume-bg{
             width: 800px;
             margin: 0 auto;
-            padding-top: 7%;
+            padding-top: 5%;
+            animation: showBg  1s ease-in  1 normal;
+            -webkit-animation: showBg  1s ease-in  1 normal;
         }
         .resume-content{
             width: 100%;
             border: 1px solid gray;
             background: #fafafa;
-            // height: 1000px;
             box-shadow: #666 0px 0px 15px;
             background-origin:content-box;
+        }
+        .br-block{
+            width: 100%;
+            height: 80px;
+        }
+    }
+    @keyframes showBg {
+        from{
+            padding-top:130px;
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
         }
     }
 }

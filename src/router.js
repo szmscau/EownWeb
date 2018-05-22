@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Redirect, NavLink } from 'react-router-
 // import { Router, Route, hashHistory } from 'react-router'
 import PropTypes from 'prop-types'
 import App from './route/index'
-import Test from './route/test'
+import Journey from './route/journey'
 import Ts from './route/test/test2'
 import Resume from './route/resume'
 
@@ -93,8 +93,8 @@ const Root = () => {
             {/* {routes.map((route, i) => { return <RouteWithSubRoutes key={i} {...route} /> })} */}
             <Route exact path="/" component={App} />
             <Route exact={false} path='/resume' component={Resume} />
-            <Route exact={false} path="/test" component={Test} />
-            <Route exact={false} path='/test/ts' component={Ts} />
+            <Route exact={false} path="/Journey" component={Journey} />
+            {/* <Route exact={false} path='/test/ts' component={Ts} /> */}
         </div>
     </Router>)
 }
