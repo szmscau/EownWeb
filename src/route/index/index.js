@@ -11,10 +11,9 @@ class App extends React.Component {
     temp: false,
   }
   liClick(e) {
-    this.props.history.push({'pathname':'https://www.baidu.com'})
-    // this.setState({
-    //   temp: true
-    // });
+    this.setState({
+      temp: true
+    });
   }
   render() {
     const { temp } = this.state;
