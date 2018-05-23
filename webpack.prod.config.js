@@ -1,34 +1,3 @@
-// // 一个简单的 webpack.config.js 文件
-// var path = require('path');
-// var webpack = require('webpack');
-// const OpenBrowserPlugin = require('open-browser-webpack-plugin');
-// const HtmlWebpackPlugin = require('html-webpack-plugin'); // 自动生成build文件夹及文件：
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-// const ROOT_PATH = path.resolve(__dirname);
-// const SRC_PATH = path.resolve(ROOT_PATH, 'src');
-// const BUILD_PATH = path.resolve(ROOT_PATH, 'dist');
-
-// module.exports = {
-//   // webpack 进行打包的入口文件，这里 webpack 从根目录下的 index.js 开始进行打包
-//   entry: [
-//     './index'
-//   ],
-//   // webpack 打包后的输出文件的路径
-// //   output: {
-// //     path: path.join(__dirname, 'dist'), // 文件放至当前路径下的 dist 文件夹
-// //     filename: 'bundle.js',  // 将打包后的输出文件命名为 bundle.js
-// //   }
-//     output: {
-//         path: BUILD_PATH,
-//         filename: 'js/[name].[hash:5].js',
-//         publicPath: '/'
-//     },
-//     resolve: {
-//         extensions: [".js", ".json", ".jsx", ".css", ".less"],
-// },
-// }
-
 var webpack = require('webpack');
 var path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -85,9 +54,4 @@ module.exports = {
       loader: "style-loader!css-loader"
     }]
   },
-  plugins: [
-
-    new BundleAnalyzerPlugin()
-
-  ]
 };

@@ -30,7 +30,7 @@ class App extends React.Component {
                 <Link to="/resume" id="introduce"></Link>
               </li>
               <li>
-                <Link to="/test" id="blog">
+                <Link to="/" id="blog">
                 </Link>
               </li>
               <li>
@@ -50,7 +50,7 @@ class App extends React.Component {
           <div className="sunshine" />
         </div>
         <Modal show={temp} />
-        <Footer index={true} position='absolute'/>
+        <Footer index={true} position='fixed'/>
       </div>
     );
   }

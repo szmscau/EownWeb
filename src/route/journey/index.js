@@ -303,7 +303,7 @@ class Journey extends React.Component {
       <div>
         <Title />
         <div id="main" className="journey" style={{ 'position': 'fixed' }}></div>
-        <Footer index={false} text={'journey'} position='absolute'/>
+        <Footer index={false} text={'journey'} position='fixed'/>
       </div>
     );
   }

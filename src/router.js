@@ -3,10 +3,11 @@ import { BrowserRouter as Router, Route, Redirect, NavLink } from 'react-router-
 // import { IndexRoute ,Router, Route, Link } from 'react-router'
 // import { Router, Route, hashHistory } from 'react-router'
 import PropTypes from 'prop-types'
-import App from './route/index'
-import Journey from './route/journey'
-import Ts from './route/test/test2'
-import Resume from './route/resume'
+import Division from './division'
+// import App from './route/index'
+// import Journey from './route/journey'
+// // import Ts from './route/test/test2'
+// import Resume from './route/resume'
 
 
 // const routes = [
@@ -61,9 +62,9 @@ const Links = () => (
     </nav>
 )
 const isActiveFunc = (match, location) => {
-    console.log(match,'contact')
+    console.log(match, 'contact')
     return match
-  }
+}
 
 const AddressBar = () => (
     <Route render={({ location: { pathname }, history }) => (
@@ -91,9 +92,24 @@ const Root = () => {
             {/* <AddressBar /> */}
             {/* <Links /> */}
             {/* {routes.map((route, i) => { return <RouteWithSubRoutes key={i} {...route} /> })} */}
-            <Route exact path="/" component={App} />
+            <Route exact path="/" render={() => {
+                return (<Division load={require('bundle-loader?lazy!./route/index')}>
+                    {(App) => <App></App>}
+                </Division>)
+            }} />
+            <Route exact path="/resume" render={() => {
+                return (<Division load={require('bundle-loader?lazy!./route/resume')}>
+                    {(Resume) => <Resume></Resume>}
+                </Division>)
+            }} />
+            <Route exact path="/journey" render={() => {
+                return (<Division load={require('bundle-loader?lazy!./route/journey')}>
+                    {(Journey) => <Journey></Journey>}
+                </Division>)
+            }} />
+            {/* <Route exact={false} path='/' component={App} />
             <Route exact={false} path='/resume' component={Resume} />
-            <Route exact={false} path="/Journey" component={Journey} />
+            <Route exact={false} path="/Journey" component={Journey} /> */}
             {/* <Route exact={false} path='/test/ts' component={Ts} /> */}
         </div>
     </Router>)
