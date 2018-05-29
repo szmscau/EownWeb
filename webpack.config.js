@@ -1,38 +1,8 @@
-// // 一个简单的 webpack.config.js 文件
-// var path = require('path');
-// var webpack = require('webpack');
-// const OpenBrowserPlugin = require('open-browser-webpack-plugin');
-// const HtmlWebpackPlugin = require('html-webpack-plugin'); // 自动生成build文件夹及文件：
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-// const ROOT_PATH = path.resolve(__dirname);
-// const SRC_PATH = path.resolve(ROOT_PATH, 'src');
-// const BUILD_PATH = path.resolve(ROOT_PATH, 'dist');
-
-// module.exports = {
-//   // webpack 进行打包的入口文件，这里 webpack 从根目录下的 index.js 开始进行打包
-//   entry: [
-//     './index'
-//   ],
-//   // webpack 打包后的输出文件的路径
-// //   output: {
-// //     path: path.join(__dirname, 'dist'), // 文件放至当前路径下的 dist 文件夹
-// //     filename: 'bundle.js',  // 将打包后的输出文件命名为 bundle.js
-// //   }
-//     output: {
-//         path: BUILD_PATH,
-//         filename: 'js/[name].[hash:5].js',
-//         publicPath: '/'
-//     },
-//     resolve: {
-//         extensions: [".js", ".json", ".jsx", ".css", ".less"],
-// },
-// }
-
 var webpack = require('webpack');
 var path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // 自动生成build文件夹及文件：
 
 module.exports = {
   entry: './src/app.js',
@@ -40,8 +10,9 @@ module.exports = {
   output: {
     // path: path.join(__dirname, 'dist'), // 文件放至当前路径下的 dist 文件夹
     path: path.resolve(__dirname, "./build/js"),//绝对路径,打包发布时才用到 path.resolve将两个相对路径生成了一个绝对路径
-    publicPath: '/js/',//index.html与打包后的js的相对路径
-    filename: "bundle.js"
+    publicPath: '/',//index.html与打包后的js的相对路径
+    filename: "js/[name].[hash:5].js"
+    // filename: "js/bundle.js"
   },
   devServer: {   //webpack端口设置,默认8080
     historyApiFallback: true,  //当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html。通过传入以下启用
@@ -65,13 +36,6 @@ module.exports = {
       test: /\.(png|jpg)$/,
       loader: 'url-loader?limit=8192'
     },
-    //  {
-    //   test: /\.less$/,
-    //   use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({ // css-hot-loader结局热替换CSS不自动刷新
-    //     fallback: 'style-loader',
-    //     use: ['css-loader', 'less-loader']
-    //   }))
-    // },
     {
       test: /\.less$/,
       use: [
@@ -86,8 +50,14 @@ module.exports = {
     }]
   },
   plugins: [
-
-    new BundleAnalyzerPlugin()
-
+    new BundleAnalyzerPlugin(), //启动分析
+    new webpack.HotModuleReplacementPlugin(), //暂时不知道干啥的
+    new HtmlWebpackPlugin({  //自动注入代码,生成html
+      title: 'ligh站点',
+      template: './templates/index.html',
+      filename: 'index.html',
+      inject: 'body'
+  }),
+    // new ExtractTextPlugin("css/style.css"),
   ]
 };
