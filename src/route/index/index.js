@@ -27,23 +27,22 @@ class App extends React.Component {
           <div className="content">
             <ul>
               <li>
-                <Link to="/resume" id="introduce"></Link>
+                <Link to="/resume" id="introduce" title="resume"></Link>
               </li>
               <li>
-                <Link to="/" id="blog">
-                </Link>
+                <a href="http://scaum.cn:8080/" title="blog" id="blog"></a>
               </li>
               <li>
-                <Link to="/Journey" id="foot"></Link>
+                <Link to="/Journey" id="foot" title="foot"></Link>
               </li>
               <li>
-                <a href="https://github.com/szmscau" id="github"></a>
+                <a href="https://github.com/szmscau" id="github" title="github"></a>
               </li>
               <li>
-                <a href="mailto:shenzhiming999@126.com" id="email"></a>
+                <a href="mailto:shenzhiming999@126.com" id="email" title="email"></a>
               </li>
               <li onClick={this.liClick.bind(this)}>
-                <a id="wechat"></a>
+                <a id="wechat" title='wechat'></a>
               </li>
             </ul>
           </div>
