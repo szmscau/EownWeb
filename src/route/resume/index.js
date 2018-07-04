@@ -69,6 +69,14 @@ const resume = {
                 description: '前端开发，使用公司fish框架（基于backbone、jq、handlebar、underscore）进行研发，负责页面开发、组件的更新维护，开发兼容IE（基于flash[替代2.0ActiveX版本]）、firefox（WebAPI）、chrome（WebAPI）的摄像头程序、基于canvas编写仿QQ截图的摄像头截图功能'
             },
             {
+                name: '掌上销',
+                type: "00",  // 00 为公司，11为项目
+                time: '2018-04~至今',
+                job: '前端开发工程师',
+                location: '广东·广州',
+                description: '前端开发负责人，基于dva（1.2.1）脚手架、antv-mobile（2.1.8"）进行掌上销 H5开发'
+            },
+            {
                 name: 'New retail',
                 type: "00",  // 00 为公司，11为项目
                 time: '2017-12~2018-04',
@@ -77,12 +85,13 @@ const resume = {
                 description: '阿里新零售，前端开发，基于dva（react、react-router-redux、react-router、redux-saga）脚手架、antv组件、viser图表库实现页面UI及业务逻辑'
             },
             {
-                name: '掌上销',
+                name: 'web-camera',
                 type: "00",  // 00 为公司，11为项目
-                time: '2018-04~至今',
-                job: '前端开发工程师',
+                time: '2018-01~2018-06',
+                job: 'react版本改造',
                 location: '广东·广州',
-                description: '前端开发负责人，基于dva（1.2.1）脚手架、antv-mobile（2.1.8"）进行掌上销H5开发'
+                link:'http://scaum.cn:1010',
+                description: 'react版本 【web摄像头】|||不使用ES6语法 : 持chrome、firefox、IE(8~11) [支持cmd规范]  ,本地开发localhost无安全限制,服务器需https协议、firefox、IE无此约束。支持WebAPI浏览器使用video+webapi其他使用flash，建议使用firefox访问'
             },
             {
                 name: 'EownWeb',
@@ -90,7 +99,7 @@ const resume = {
                 time: '2018-02~至今',
                 job: '个人网站',
                 location: '广东·广州',
-                link:'https://github.com/szmscau',
+                link:'https://github.com/szmscau/EownWeb',
                 description: '个人website开发，集成个人博客、简历及渣渣功能的站点，负责webpack构建|react|react-routrt（4.20）|react|react-saga(0.16.0)|less'
             },
         ]

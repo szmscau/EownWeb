@@ -9,29 +9,29 @@ class Companies extends React.Component {
                 {
                     dataList.map(it => {
                         return (
-                        <div className="company-container">
-                            <div className="company-title">{it.title}</div>
-                            {
-                                it.dataList.map(item => {
-                                    return (
-                                        <div className="company-list">
-                                            <div className="company-name">
-                                                <span className="table-name">
-                                                    · {item.name} { item.link ? <i className="link"></i>:''}
-                                                </span>
-                                                <small><i>{item.time}</i></small>
-                                            </div>
-                                            <div className="company-job">
-                                                <span>{item.job}</span>
-                                                <span className="flex-loca"><i className="location" /><div>{item.location}</div></span>
-                                            </div>
-                                            <div className="company-exe">
-                                                {item.description}
-                                            </div>
-                                        </div>)
-                                })
-                            }
-                        </div>)
+                            <div className="company-container">
+                                <div className="company-title">{it.title}</div>
+                                {
+                                    it.dataList.map(item => {
+                                        return (
+                                            <div className="company-list">
+                                                <div className="company-name">
+                                                    <span className="table-name">
+                                                        · {item.name} {item.link ? <a href={item.link}> <i className="link"></i></a> : ''}
+                                                    </span>
+                                                    <small><i>{item.time}</i></small>
+                                                </div>
+                                                <div className="company-job">
+                                                    <span>{item.job}</span>
+                                                    <span className="flex-loca"><i className="location" /><div>{item.location}</div></span>
+                                                </div>
+                                                <div className="company-exe">
+                                                    {item.description}
+                                                </div>
+                                            </div>)
+                                    })
+                                }
+                            </div>)
                     })
                 }
             </div>

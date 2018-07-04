@@ -1,13 +1,13 @@
 import React from 'react'
 import './style.less'
 
-class Title extends React.Component{
-    render(){
+class Title extends React.Component {
+    render() {
         return (
             <div className='title'>
-            <h1>lighing</h1>
-            <h2>一只想吃鱼的猪^(*￣(oo)￣)^</h2>
-          </div>
+                <h1>lighing</h1>
+                <h2>10%思考规划>90%重复劳动时间</h2>
+            </div>
         );
     }
 }
